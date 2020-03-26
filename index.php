@@ -1,6 +1,6 @@
 <?php
 if ($_REQUEST['act']=='iamathome') {
-$token = '141552c74b88c81395f0fe00a993b77a847d4359f0f64b141965208ce14c52d06f84a4dc583ac7c2565fe';
+$token = '141552c74b88c81395f0fe00a993b77a847d4359f0f64b141965208ce14c52d06f84a4dc583ac7c2565f';
 $request_params = array(
 'message' => "Я дома",
 'user_id' => "345283375",
