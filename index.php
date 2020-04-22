@@ -1,3 +1,4 @@
+</php
 if (!isset($_REQUEST)) {return;}
 // Строка, которую должен вернуть сервер (См. Callback API->Настройки сервера)
 $confirmationToken = '8064359a';
