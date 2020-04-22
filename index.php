@@ -4,7 +4,7 @@ $confirmationToken = '8064359a';
 // Ключ доступа сообщества (длинная строчка которую получили нажав "создать ключ")
 $token = '072b0a909c47f6b033175526944183e585f4a61d81b082d9de1ec3242453890e72cdb77f72e39bc5a13ef';
 // Секретный ключ. (Задаем в Callback API->Настройки сервера)
-$secretKey = 'secretkey';
+$secretKey = 'k';
 // Получаем и декодируем уведомление
 $data = json_decode(file_get_contents('php://input'));
 // проверяем secretKey
@@ -21,14 +21,14 @@ case 'message_new':
 $userId = $data->object->user_id;
     $mes = $data->object->body;
         if ($mes=='Начать') {
-        $answ='Привет! Я - бот Переводчик. Я принимаю запрос в формате "{код с кагого языка перевести}-{код на какой язык перевести} {Фраза}". Например: "en-ru Hello!" Узнать допустимые языки и их коды вы можете узнать по ссылке https://vk.com/yandextranslatebot?w=wall-192513952_1';
+        $answ='Начать ты написал зачем';
         }
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
 'message' => "$answ",
 'user_id' => $userId,
 'access_token' => $token,
-'v' => '5.0'
+'v' => '5.50'
 );
     
 $get_params = http_build_query($request_params);
