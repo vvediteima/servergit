@@ -32,6 +32,7 @@ $request_params = array(
     
 $get_params = http_build_query($request_params);
 file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
+        echo "ok";
 break;
 }
 ?>
