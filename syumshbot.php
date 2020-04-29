@@ -21,9 +21,12 @@ case 'message_new':
 // получаем id автора сообщения
 $userId = $data->object->message->peer_id;
     $mes = $data->object->message->text;
+        if ($mes=='Начать') {
+            $answ='Привет, @id$userId";
+        }
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
-'message' => "Задолбал материться бл",
+'message' => $answ,
 'user_id' => $userId,
 'access_token' => $token,
 'v' => '5.0'
