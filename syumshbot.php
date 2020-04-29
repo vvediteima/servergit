@@ -21,16 +21,9 @@ case 'message_new':
 // получаем id автора сообщения
 $userId = $data->object->user_id;
     $mes = $data->object->body;
-        if ($mes=='Начать') {
-        $answ='Закончить';
-        }
-        else {
-            $answ='Неверный формат запроса или команда.';
-        }
-}
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
-'message' => $answ,
+'message' => "Задолбал материться бл",
 'user_id' => $userId,
 'access_token' => $token,
 'v' => '5.0'
