@@ -19,8 +19,8 @@ break;
 // Если это уведомление о новом сообщении...
 case 'message_new':
 // получаем id автора сообщения
-$userId = $data->object->message->peer_id;
-    $mes = $data->object->message->text;
+$userId = $data->object->user_id;
+    $mes = $data->object->body;
  $answ=$mes;
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
