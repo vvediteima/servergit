@@ -22,7 +22,7 @@ case 'message_new':
 $userId = $data->object->message->peer_id;
     $mes = $data->object->message->text;
         if ($mes=='Начать') {
-            $answ='Привет, @id$userId";
+            $answ='Привет. Просто привет";
         }
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
