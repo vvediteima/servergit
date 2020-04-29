@@ -30,7 +30,7 @@ $userId = $data->object->user_id;
 }
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
-'message' => "$answ",
+'message' => $answ,
 'user_id' => $userId,
 'access_token' => $token,
 'v' => '5.0'
@@ -38,7 +38,6 @@ $request_params = array(
     
 $get_params = http_build_query($request_params);
 file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
-echo('ok'); // Возвращаем "ok" серверу Callback API
 break;
 }
 ?>
