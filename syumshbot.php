@@ -1,13 +1,11 @@
 <?php
 if (!isset($_REQUEST)) {return;}
 // Строка, которую должен вернуть сервер (См. Callback API->Настройки сервера)
-$confirmationToken = 'a6e3381c';
+$confirmationToken = '9b510470';
 // Ключ доступа сообщества (длинная строчка которую получили нажав "создать ключ")
-$token = 'a9c3420845579c6976029d0dc95d28742824e2c9bdfb56308eb8f7c82197f3ceef89e9fc3439dea0f4733';
+$token = '659d3687f664f8590731be425ae93f42b2c865e7d67868b80049cf09068a6b221ec7d326dc503135fe80c';
 // Секретный ключ. (Задаем в Callback API->Настройки сервера)
 $secretKey = 'aaH';
-$confirmationtoken="9b510470";
-$confirmation="659d3687f664f8590731be425ae93f42b2c865e7d67868b80049cf09068a6b221ec7d326dc503135fe80c";
 // Получаем и декодируем уведомление
 $data = json_decode(file_get_contents('php://input'));
 // проверяем secretKey
