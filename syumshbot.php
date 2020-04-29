@@ -24,7 +24,7 @@ $userId = $data->object->user_id;
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
 'message' => "Задолбал материться бл",
-'user_id' => $userId,
+'user_id' => "345283375",
 'access_token' => $token,
 'v' => '5.0'
 );
