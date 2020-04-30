@@ -28,8 +28,11 @@ $uinfo=json_decode($uinfo,1);
 $answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши coms"; 
  }
  if ($mes=="coms" || $mes=="Coms") {
-$answ="Вот список команд:\n Пока пусто";
+$answ="Вот список команд:\n employes - список сотрудников паблика\n";
  }
+      if ($mes=="Employes" || $mes=="employes") {
+     $answ="Создатель - [@nikitaomg|Никита Сысоев]\nАдминистраторы - [@vvediteima|Платонов Егор] и [@antontagiev|Гриб Неуровновешеный]\n Мемодел - [@buterbruuh|МакСемка Красовок]buterbruuh"; 
+      }  
         
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
