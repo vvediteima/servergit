@@ -31,7 +31,7 @@ $answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Р
 $answ="Вот список команд:\n employes - список сотрудников паблика\n";
  }
       if ($mes=="Employes" || $mes=="employes") {
-     $answ="Создатель - [@nikitaomg|Никита Сысоев]\nАдминистраторы - [@vvediteima|Платонов Егор] и [@antontagiev|Гриб Неуровновешеный]\n Мемодел - [@buterbruuh|МакСемка Красовок]buterbruuh"; 
+     $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистраторы - @vvediteima (Платонов Егор) и @antontagiev (Гриб Неуровновешеный)\n Мемодел - @buterbruuh (МакСемка Красовок)"; 
       }  
         
 // Через messages.send используя токен сообщества отправляем ответ
