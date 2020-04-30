@@ -33,7 +33,7 @@ $answ="Вот список команд:\n employes - список сотруд�
       if ($mes=="Employes" || $mes=="employes") {
      $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистраторы - @vvediteima (Платонов Егор) и @antontagiev (Гриб Неуровновешеный)\n Мемодел - @buterbruuh (МакСемка Красовок)"; 
       }
-        if ($mes=="Durka" || $mes="durka") {
+        if ($mes=="Durka" || $mes=="durka") {
       $answ="https://www.youtube.com/watch?v=0nyAvZadngw";  
         }
         
