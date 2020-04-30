@@ -27,7 +27,7 @@ $uinfo=json_decode($uinfo,1);
  if ($mes=="Начать") {
 $answ="Привет, ".$uinfo["response"][0]['first_name']."!"; 
  }
- if ($mes=="coms" || $mes="Coms") {
+ if ($mes=="coms" || $mes=="Coms") {
 $answ="Вот список команд:\n Пока пусто";
  }
         
