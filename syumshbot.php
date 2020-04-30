@@ -25,7 +25,7 @@ $userId = $data->object->user_id;
 $uinfo=json_decode($uinfo,1);
         $answ="Прости, ".$uinfo["response"][0]['first_name'].", я не знаю такой команды. Напиши coms"; 
  if ($mes=="Начать") {
-$answ="Привет, ".$uinfo["response"][0]['first_name']."!"; 
+$answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]!"; 
  }
  if ($mes=="coms" || $mes=="Coms") {
 $answ="Вот список команд:\n Пока пусто";
