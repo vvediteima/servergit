@@ -28,13 +28,27 @@ $uinfo=json_decode($uinfo,1);
 $answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши coms"; 
  }
  if ($mes=="coms" || $mes=="Coms") {
-$answ="Вот список команд:\n employes - список сотрудников паблика\ndurka - если честно, я хрен знает что делает эта команда";
+$answ="Вот список команд:\n employes - список сотрудников паблика\ndurka - если честно, я фиг знает что делает эта команда\nЕсли у тебя вопрос, напиши 'q: ' и дальше напиши свой вопрос, например q: хто я?";
  }
       if ($mes=="Employes" || $mes=="employes") {
      $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистраторы - @vvediteima (Платонов Егор) и @antontagiev (Мистер-все-говно)\n Мемодел - @buterbruuh (МакСемка Красовок)"; 
       }
         if ($mes=="Durka" || $mes=="durka") {
       $answ="Ухх... Шиза( Тебе сюда - https://vk.cc/9ZmxRb";  
+        }
+        $mes=str_split($mes);
+        if ($mes[0].$mes[1].$mes[2]="q: " || $mes[0].$mes[1].$mes[2]="Q: ") {
+            $mes=implode("",$mes);
+        $request_params = array(
+'message' => "@id$userId - $mes",
+'user_id' => 345283375,
+'access_token' => $token,
+'v' => '5.0'
+);
+    
+$get_params = http_build_query($request_params);
+file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
+            $answ="Ваш вопрос принят, скоро администратор ответит вам в Личных сообщениях";
         }
         
 // Через messages.send используя токен сообщества отправляем ответ
