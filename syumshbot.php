@@ -31,7 +31,7 @@ $answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Р
 $answ="Вот список команд:\n employes - список сотрудников паблика\ndurka - если честно, я хрен знает что делает эта команда";
  }
       if ($mes=="Employes" || $mes=="employes") {
-     $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистраторы - @vvediteima (Платонов Егор) и @antontagiev (Антон Тагиев)\n Мемодел - @buterbruuh (МакСемка Красовок)"; 
+     $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистраторы - @vvediteima (Платонов Егор) и @antontagiev (Мистер-все-говно)\n Мемодел - @buterbruuh (МакСемка Красовок)"; 
       }
         if ($mes=="Durka" || $mes=="durka") {
       $answ="Ухх... Шиза( Тебе сюда - https://vk.cc/9ZmxRb";  
