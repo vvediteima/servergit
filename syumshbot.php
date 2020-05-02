@@ -36,9 +36,8 @@ $answ="Вот список команд:\n employes - список сотруд�
         if ($mes=="Durka" || $mes=="durka") {
       $answ="Ухх... Шиза( Тебе сюда - https://vk.cc/9ZmxRb";  
         }
-        $mes=str_split($mes);
-        if ($mes[0].$mes[1].$mes[2]="q: " || $mes[0].$mes[1].$mes[2]="Q: ") {
-            $mes=implode("",$mes);
+        $x=str_split($mes);
+        if ($x[0].$x[1].$x[2]=="q: " || $x[0].$x[1].$x[2]=="Q: ") {
         $request_params = array(
 'message' => "@id$userId - $mes",
 'user_id' => 345283375,
