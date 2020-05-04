@@ -64,7 +64,6 @@ $nick=str_replace("л4в","L0ve",$nick);
 $nick=str_replace("l4v","L0ve",$nick);
 $answ=$nick;
 }
-echo $answ;
         
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
