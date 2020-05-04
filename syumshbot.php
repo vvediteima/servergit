@@ -36,8 +36,8 @@ $answ="Вот список команд:\n employes - список сотруд�
         if ($mes=="Durka" || $mes=="durka") {
       $answ="Ухх... Шиза( Тебе сюда - https://vk.cc/9ZmxRb";  
         }
-        $x=str_split($mes);
-        if ($x[0].$x[1].$x[2]=="q: " || $x[0].$x[1].$x[2]=="Q: ") {
+        $x=explode(": ",$mes);
+        if ($x[0]=="q" || $x[0]=="Q") {
         $request_params = array(
 'message' => "@id$userId - $mes",
 'user_id' => 345283375,
@@ -49,6 +49,22 @@ $get_params = http_build_query($request_params);
 file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
             $answ="Ваш вопрос принят, скоро администратор ответит вам в Личных сообщениях";
         }
+       if ($x[0]=="nick_gen" || $x[0]=="Nick_gen") {
+$nick=$x[1];
+$nick=str_replace("a","4",$nick);
+$nick=str_replace("а","4",$nick);
+$nick=str_replace("l","1",$nick);
+$nick=str_replace("o","0",$nick);
+$nick=str_replace("о","0",$nick);
+$nick=str_replace("s","5",$nick);
+$nick=str_replace("r","г",$nick);
+$nick=str_replace("10","1o",$nick);
+$nick=str_replace("14","1a",$nick);
+$nick=str_replace("л4в","L0ve",$nick);
+$nick=str_replace("l4v","L0ve",$nick);
+$answ=$nick;
+}
+echo $answ;
         
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
