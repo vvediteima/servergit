@@ -23,48 +23,15 @@ $userId = $data->object->user_id;
     $mes = $data->object->body;
              $uinfo=file_get_contents("https://api.vk.com/method/users.get?user_ids=$userId&access_token=659d3687f664f8590731be425ae93f42b2c865e7d67868b80049cf09068a6b221ec7d326dc503135fe80c&v=5.103");
 $uinfo=json_decode($uinfo,1);
-        $answ="Прости, ".$uinfo["response"][0]['first_name'].", я не знаю такой команды. Напиши coms"; 
  if ($mes=="Начать") {
-$answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши coms"; 
+$answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши b:coms"; 
  }
- if ($mes=="coms" || $mes=="Coms") {
-$answ="Вот список команд:\n•Employes - список сотрудников паблика\n•Durka - если честно, я фиг знает что делает эта команда\n•Nick_gen: [phrase] - сгенерировать никнейм из фразы. Бот не придумывает вам гениальный и хорошо выглядящий никнейм, он просто звменяет некоторые символы, но попробовать можно. Пример: 'nick_gen: Killer'\n•Если у тебя вопрос, напиши 'q: ' и дальше напиши свой вопрос, например q: хто я?";
+ if ($mes=="b:coms" || $mes=="B:coms") {
+$answ="Вот список команд:\n•b:Employes - список сотрудников паблика\n";
  }
-      if ($mes=="Employes" || $mes=="employes") {
-     $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистратор - @vvediteima (Платонов Егор)\n Мемодел - @buterbruuh (Максим Кавцов)"; 
+      if ($mes=="b:employes" || $mes=="B:employes") {
+     $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистратор - @vvediteima (Платонов Егор)\n Мемодел - @buterbruuh (Максим Кавцов)";
       }
-        if ($mes=="Durka" || $mes=="durka") {
-      $answ="Ухх... Шиза( Тебе сюда - https://vk.cc/9ZmxRb";  
-        }
-        $x=explode(": ",$mes);
-        if ($x[0]=="q" || $x[0]=="Q") {
-        $request_params = array(
-'message' => "@id$userId - $mes",
-'user_id' => 345283375,
-'access_token' => $token,
-'v' => '5.0'
-);
-    
-$get_params = http_build_query($request_params);
-file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
-            $answ="Ваш вопрос принят, скоро администратор ответит вам в Личных сообщениях";
-        }
-       if ($x[0]=="nick_gen" || $x[0]=="Nick_gen") {
-$nick=$x[1];
-$nick=str_replace("a","4",$nick);
-$nick=str_replace("а","4",$nick);
-$nick=str_replace("l","1",$nick);
-$nick=str_replace("o","0",$nick);
-$nick=str_replace("о","0",$nick);
-$nick=str_replace("s","5",$nick);
-$nick=str_replace("r","г",$nick);
-$nick=str_replace("10","1o",$nick);
-$nick=str_replace("14","1a",$nick);
-$nick=str_replace("л4в","L0ve",$nick);
-$nick=str_replace("l4v","L0ve",$nick);
-$answ=$nick;
-}
-        
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
 'message' => $answ,
