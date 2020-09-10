@@ -1,7 +1,7 @@
 <?php
 if (!isset($_REQUEST)) {return;}
 // Строка, которую должен вернуть сервер (См. Callback API->Настройки сервера)
-$confirmationToken = 'c94fff66';
+$confirmationToken = '616406a0';
 // Ключ доступа сообщества (длинная строчка которую получили нажав "создать ключ")
 $token = '659d3687f664f8590731be425ae93f42b2c865e7d67868b80049cf09068a6b221ec7d326dc503135fe80c';
 // Секретный ключ. (Задаем в Callback API->Настройки сервера)
@@ -26,12 +26,12 @@ $uinfo=json_decode($uinfo,1);
  if ($mes=="Начать") {
 $answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши b:coms"; 
  }
- if ($mes=="b:coms" || $mes=="B:coms") {
+ /*if ($mes=="b:coms" || $mes=="B:coms") {
 $answ="Вот список команд:\n•b:Employes - список сотрудников паблика\n";
  }
       if ($mes=="b:employes" || $mes=="B:employes") {
      $answ="Создатель - @nikitaomg (Никита Сысоев)\nАдминистратор - @vvediteima (Платонов Егор)\n Мемодел - @buterbruuh (Максим Кавцов)";
-      }
+      }*/
 // Через messages.send используя токен сообщества отправляем ответ
 $request_params = array(
 'message' => $answ,
