@@ -21,10 +21,8 @@ case 'message_new':
 // получаем id автора сообщения
 $userId = $data->object->user_id;
     $mes = $data->object->body;
-             $uinfo=file_get_contents("https://api.vk.com/method/users.get?user_ids=$userId&access_token=659d3687f664f8590731be425ae93f42b2c865e7d67868b80049cf09068a6b221ec7d326dc503135fe80c&v=5.103");
-$uinfo=json_decode($uinfo,1);
  if ($mes=="Начать") {
-$answ="Привет, [id".$userId."|".$uinfo["response"][0]['first_name']."]! Рады видеть тебя в нашем паблике. Напиши b:coms"; 
+$answ="Привет"; 
  }
  /*if ($mes=="b:coms" || $mes=="B:coms") {
 $answ="Вот список команд:\n•b:Employes - список сотрудников паблика\n";
